@@ -2,6 +2,7 @@
 #define HELPSTATE_H
 
 #include "State.h"
+#include "Button.h"
 
 class HelpState :
     public State
@@ -11,11 +12,14 @@ private:
     Font font;
     Text text;
 
+    map<string, Button*> buttons;
+
     void initFonts();
+    void initButtons();
 
 public:
     HelpState(RenderWindow* window, stack<State*>* states);
-    virtual ~HelpState() = default;
+    virtual ~HelpState();
 
     void endState();
 
@@ -23,7 +27,9 @@ public:
     void setText();
 
     void updateInput(const float& dt);
+    void updateButtons();
     void update(const float& dt);
+    void renderButtons(RenderTarget* target);
     void render(RenderTarget* target = NULL);
 };
 
