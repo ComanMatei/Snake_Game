@@ -11,6 +11,10 @@ private:
     //Variable
     RectangleShape background;
     RectangleShape menuBackground;
+    RectangleShape snakeBackground;
+    Texture snakeImage;
+    Sprite snakeImageSprite;
+    Text headerText;
     Font font;
 
     map<string, Button*> buttons;

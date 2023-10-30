@@ -4,8 +4,13 @@
 void MainMenuState::initFonts()
 {
 	try {
-		if (!this->font.loadFromFile("Dosis-Light.ttf")) {
+		if (!this->font.loadFromFile("assets/fonts/ShortBaby-Mg2w.ttf")) {
 			throw std::runtime_error("Could not find font!");
+		}
+
+		if (!snakeImage.loadFromFile("assets/images/snakeImage.png"))
+		{
+			throw std::runtime_error("Could not find image!");
 		}
 	}
 
@@ -16,17 +21,37 @@ void MainMenuState::initFonts()
 
 void MainMenuState::initButtons()
 {
-	this->buttons["GAME_STATE"] = new Button(200, 120, 150, 50,
+
+	this->buttons["GAME_STATE"] = new Button(175, 220, 150, 50,
 		&this->font, "New Game",
-		Color(70, 70, 70, 200), Color(150, 150, 150, 200), Color(20, 20, 20, 200));
+		Color(70, 70, 70, 200),
+		Color(150, 150, 150, 200),
+		Color(20, 20, 20, 200));
 
-	this->buttons["HELP_STATE"] = new Button(300, 300, 150, 50,
+	this->buttons["LOAD_STATE"] = new Button(175, 300, 150, 50,
+		&this->font, "Load Game",
+		Color(70, 70, 70, 200),
+		Color(150, 150, 150, 200),
+		Color(20, 20, 20, 200));
+
+	this->buttons["SELECT_COLOR_STATE"] = new Button(175, 380, 150, 50,
+		&this->font, "Select Color",
+		Color(70, 70, 70, 200),
+		Color(150, 150, 150, 200),
+		Color(20, 20, 20, 200));
+
+	this->buttons["HELP_STATE"] = new Button(175, 460, 150, 50,
 		&this->font, "Help",
-		Color(70, 70, 70, 200), Color(150, 150, 150, 200), Color(20, 20, 20, 200));
+		Color(70, 70, 70, 200),
+		Color(150, 150, 150, 200),
+		Color(20, 20, 20, 200));
 
-	this->buttons["EXIT_STATE"] = new Button(100, 300, 150, 50,
+	this->buttons["EXIT_STATE"] = new Button(175, 540, 150, 50,
 		&this->font, "Quit",
-		Color(70, 70, 70, 200), Color(150, 150, 150, 200), Color(20, 20, 20, 200));
+		Color(70, 70, 70, 200),
+		Color(150, 150, 150, 200),
+		Color(20, 20, 20, 200));
+
 }
 
 MainMenuState::MainMenuState(RenderWindow* window, stack<State*>* states)
@@ -35,13 +60,24 @@ MainMenuState::MainMenuState(RenderWindow* window, stack<State*>* states)
 	this->initFonts();
 	this->initButtons();
 
-	this->background.setSize(Vector2f(window->getSize().x, window->getSize().y));
+	this->background.setSize(Vector2f(1280, 720));
 	this->background.setFillColor(Color::White);
+
+	snakeImageSprite.setTexture(snakeImage);
+	snakeImageSprite.setPosition(550, 20);
 
 	menuBackground.setSize(sf::Vector2f(500, 720));
 	menuBackground.setFillColor(sf::Color::Blue);
 
+	snakeBackground.setSize(sf::Vector2f(670,670));
+	snakeBackground.setFillColor(sf::Color::Magenta);
+	snakeBackground.setPosition(Vector2f(550,20));
 
+	headerText.setCharacterSize(50);
+	headerText.setString("Snake Game");
+	headerText.setFont(font);
+	headerText.setFillColor(sf::Color::White);
+	headerText.setPosition(Vector2f(120, 80));
 
 }
 
@@ -113,6 +149,9 @@ void MainMenuState::render(RenderTarget* target)
 
 	target->draw(this->background);
 	target->draw(this->menuBackground);
-
+	target->draw(this->snakeBackground);
+	target->draw(this->snakeImageSprite);
+	target->draw(this->headerText);
+	
 	this->renderButtons(target);
 }

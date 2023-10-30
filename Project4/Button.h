@@ -14,7 +14,12 @@
 using namespace std;
 using namespace sf;
 
-enum button_states{ BTN_IDLE = 0, BTN_HOVER, BTN_ACTIVE};
+enum button_states
+{ 
+	BTN_IDLE = 0,
+	BTN_HOVER,
+	BTN_ACTIVE
+};
 
 class Button
 {
