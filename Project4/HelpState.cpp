@@ -7,6 +7,11 @@ void HelpState::initFonts()
 		if (!this->font.loadFromFile("assets/fonts/ShortBaby-Mg2w.ttf")) {
 			throw std::runtime_error("Could not find font!");
 		}
+
+		if (!snakeHelpImage.loadFromFile("assets/images/snakeHelpImage.jpg"))
+		{
+			throw std::runtime_error("Could not find image!");
+		}
 	}
 
 	catch (const std::runtime_error& e) {
@@ -30,11 +35,14 @@ HelpState::HelpState(RenderWindow* window, stack<State*>* states)
 	this->initFonts();
 	this->initButtons();
 
+	spriteSnakeHelpImage.setTexture(snakeHelpImage);
+	spriteSnakeHelpImage.setPosition(Vector2f(0, 0));
+
 	this->font = font;
 	this->text.setString("1. Scopul jocului : \n"
-		"   - Scopul jocului Snake este sa controlezi un sarpe care se deplaseaza pe ecran pentru a manca mancarea si a creste in lungime, evitand coliziunile cu el insusi si peretele.\n"
+		"   - Scopul jocului Snake este sa controlezi un sarpe care se deplaseaza pe ecran pentru a manca mancarea si a creste in lungime,\n evitand coliziunile cu el insusi si peretele.\n"
 		"2. Miscarea sarpelui:\n"
-		"   - Utilizeaza sagetile directionale 'sageata sus' pentru deplasare in sus, sageata jos pentru deplasare in jos, sageata stanga pentru deplasare la stanga si sageata dreapta\n pentru deplasare la dreapta) pentru a controla directia sarpelui.\n"
+		"   - Utilizeaza sagetile directionale 'sageata sus' pentru deplasare in sus, sageata jos pentru deplasare in jos, sageata stanga pentru\n deplasare la stanga si sageata dreapta pentru deplasare la dreapta) pentru a controla directia sarpelui.\n"
 		"3. Colectarea mancarii:\n"
 		"   - Pe ecran vor aparea bucati de mancare reprezentate ca un mar.\n"
 		"   - Misiunea ta este sa muti sarpele pentru a-l face sa \"manance\" aceste bucati de mancare.\n"
@@ -46,11 +54,14 @@ HelpState::HelpState(RenderWindow* window, stack<State*>* states)
 		"   - Scopul secundar este sa obtii un scor cat mai mare. Fiecare bucata de mancare mancata adauga puncte la scorul tau.\n"
 		"   - Scorul tau poate fi comparat cu cel al altor jucatori in mod competitiv.\n"
 		"6. Optiuni si variante:\n"
-		"   - In functie de versiunea jocului sau platforma pe care o folosesti, pot exista variante si optiuni suplimentare, cum ar fi bonusuri sau obstacole speciale."")");
+		"   - In functie de versiunea jocului sau platforma pe care o folosesti, pot exista variante si optiuni suplimentare, cum ar fi bonusuri\n sau obstacole speciale."")");
 	this->text.setFont(this->font);
 	this->text.setFillColor(Color::White);
-	text.setPosition(50, 100);
-	this->text.setCharacterSize(16);
+	text.setPosition(40, 100);
+	this->text.setCharacterSize(22);
+
+	this->background.setSize(Vector2f(1280, 720));
+	this->background.setFillColor(sf::Color::Blue);
 
 }
 
@@ -110,6 +121,7 @@ void HelpState::render(RenderTarget* target)
 	if (!target)
 		target = this->window;
 	target->draw(this->background);
+	target->draw(this->spriteSnakeHelpImage);
 	target->draw(this->text);
 
 	this->renderButtons(target);

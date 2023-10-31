@@ -11,6 +11,8 @@ private:
     RectangleShape background;
     Font font;
     Text text;
+    Texture snakeHelpImage;
+    Sprite spriteSnakeHelpImage;
 
     map<string, Button*> buttons;
 
