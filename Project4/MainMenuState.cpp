@@ -1,5 +1,7 @@
 ﻿#include "MainMenuState.h"
 #include "HelpState.h"
+#include "LoadState.h"
+
 
 void MainMenuState::initFonts()
 {
@@ -118,6 +120,13 @@ void MainMenuState::updateButtons()
 	{
 		this->states->push(new HelpState(this->window, this->states));
 	}
+
+	// Load Game
+	if (this->buttons["LOAD_STATE"]->isPressed())
+	{
+		this->states->push(new LoadState(this->window, this->states));
+	}
+
 
 	//Quit the game
 	if (this->buttons["EXIT_STATE"]->isPressed())

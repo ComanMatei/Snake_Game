@@ -39,6 +39,9 @@
     <ClCompile Include="Button.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="LoadState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameState.h">
@@ -58,6 +61,9 @@
     </ClInclude>
     <ClInclude Include="Button.h">
       <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadState.h">
+      <Filter>States</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
