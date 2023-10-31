@@ -22,7 +22,7 @@ void HelpState::initFonts()
 
 void HelpState::initButtons()
 {
-	this->buttons["BACK_MENU"] = new Button(0, 10, 150, 50,
+	this->buttons["BACK_MENU"] = new Button(0, 20, 150, 50,
 		&this->font, "Back",
 		Color(70, 70, 70, 200),
 		Color(150, 150, 150, 200),
