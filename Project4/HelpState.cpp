@@ -28,6 +28,7 @@ void HelpState::initButtons()
 		Color(150, 150, 150, 200),
 		Color(20, 20, 20, 200));
 }
+
 HelpState::HelpState(RenderWindow* window, stack<State*>* states)
 	: State(window, states)
 {
@@ -40,7 +41,7 @@ HelpState::HelpState(RenderWindow* window, stack<State*>* states)
 
 	this->font = font;
 	this->text.setString("1. Scopul jocului : \n"
-		"   - Scopul jocului Snake este sa controlezi un sarpe care se deplaseaza pe ecran pentru a manca mancarea si a creste in lungime,\n evitand coliziunile cu el insusi si peretele.\n"
+		"   - Scopul jocului Snake este sa controlezi un sarpe care se deplaseaza pe ecran pentru \n a manca mancarea si a creste in lungime, evitand coliziunile cu el insusi si peretele.\n"
 		"2. Miscarea sarpelui:\n"
 		"   - Utilizeaza sagetile directionale 'sageata sus' pentru deplasare in sus, sageata jos pentru deplasare in jos, sageata stanga pentru\n deplasare la stanga si sageata dreapta pentru deplasare la dreapta) pentru a controla directia sarpelui.\n"
 		"3. Colectarea mancarii:\n"
@@ -96,7 +97,6 @@ void HelpState::updateButtons()
 	if (this->buttons["BACK_MENU"]->isPressed())
 	{
 		this->quit = true;
-		this->states->push(new MainMenuState(this->window, this->states));
 	}
 }
 
