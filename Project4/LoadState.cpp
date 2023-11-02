@@ -9,23 +9,14 @@ LoadState::LoadState(RenderWindow* window, stack<State*>* states)
 	this->initButtons();
 
 	this->background.setSize(Vector2f(1280, 720));
-	this->background.setFillColor(Color::White);
+	this->background.setFillColor(Color::Magenta);
 
-	snakeImageSprite.setTexture(snakeImage);
-	snakeImageSprite.setPosition(550, 20);
-
-	menuBackground.setSize(sf::Vector2f(500, 720));
-	menuBackground.setFillColor(sf::Color::Magenta);
-
-	snakeBackground.setSize(sf::Vector2f(670, 670));
-	snakeBackground.setFillColor(sf::Color::Red);
-	snakeBackground.setPosition(Vector2f(550, 20));
 
 	headerText.setCharacterSize(50);
 	headerText.setString("Saved sessions:");
 	headerText.setFont(font);
 	headerText.setFillColor(sf::Color::White);
-	headerText.setPosition(Vector2f(120, 80));
+	headerText.setPosition(Vector2f(490, 80));
 	
 
 
@@ -43,22 +34,22 @@ LoadState::~LoadState()
 void LoadState::initButtons()
 {
 
-	this->buttons["LOAD_GAME_1"] = new Button(175, 220, 150, 50,
+	this->buttons["LOAD_GAME_1"] = new Button(550, 260, 150, 50,
 		&this->font, "Load Game",
 		Color(70, 70, 70, 200),
 		Color(150, 150, 150, 200),
 		Color(20, 20, 20, 200));
-	this->buttons["LOAD_GAME_2"] = new Button(175, 300, 150, 50,
+	this->buttons["LOAD_GAME_2"] = new Button(550, 340, 150, 50,
 		&this->font, "Load Game",
 		Color(70, 70, 70, 200),
 		Color(150, 150, 150, 200),
 		Color(20, 20, 20, 200));
-	this->buttons["LOAD_GAME_3"] = new Button(175, 380, 150, 50,
+	this->buttons["LOAD_GAME_3"] = new Button(550, 420, 150, 50,
 		&this->font, "Load Game",
 		Color(70, 70, 70, 200),
 		Color(150, 150, 150, 200),
 		Color(20, 20, 20, 200));
-	this->buttons["BACK"] = new Button(175, 600, 150, 50,
+	this->buttons["BACK"] = new Button(550, 600, 150, 50,
 		&this->font, "Back",
 		Color(70, 70, 70, 200),
 		Color(150, 150, 150, 200),

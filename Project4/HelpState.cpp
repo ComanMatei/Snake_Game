@@ -41,24 +41,25 @@ HelpState::HelpState(RenderWindow* window, stack<State*>* states)
 
 	this->font = font;
 	this->text.setString("1. Scopul jocului : \n"
-		"   - Scopul jocului Snake este sa controlezi un sarpe care se deplaseaza pe ecran pentru \n a manca mancarea si a creste in lungime, evitand coliziunile cu el insusi si peretele.\n"
+		"   - Scopul jocului Snake este sa controlezi un sarpe care se deplaseaza pe ecran \n pentru a manca mancarea si a creste in lungime, evitand coliziunile cu el insusi \n si peretele."
 		"2. Miscarea sarpelui:\n"
-		"   - Utilizeaza sagetile directionale 'sageata sus' pentru deplasare in sus, sageata jos pentru deplasare in jos, sageata stanga pentru\n deplasare la stanga si sageata dreapta pentru deplasare la dreapta) pentru a controla directia sarpelui.\n"
+		"   - Utilizeaza sagetile directionale 'sageata sus' pentru deplasare in sus, sageata \n jos pentru deplasare in jos, sageata stanga pentru\n deplasare la stanga si sageata dreapta pentru deplasare la dreapta) pentru a \n controla directia sarpelui.\n"
 		"3. Colectarea mancarii:\n"
 		"   - Pe ecran vor aparea bucati de mancare reprezentate ca un mar.\n"
-		"   - Misiunea ta este sa muti sarpele pentru a-l face sa \"manance\" aceste bucati de mancare.\n"
+		"   - Misiunea ta este sa muti sarpele pentru a-l face sa \"manance\" aceste bucati \n de mancare.\n"
 		"   - Fiecare bucata de mancare mancata iti va creste lungimea sarpelui cu o unitate.\n"
 		"4. Evitarea coliziunilor:\n"
 		"   - Trebuie sa eviti sa te ciocnesti de marginile ecranului sau de propria coada.\n"
 		"   - Daca capul sarpelui se loveste de o margine sau de coada, jocul se incheie.\n"
 		"5. Punctaj:\n"
-		"   - Scopul secundar este sa obtii un scor cat mai mare. Fiecare bucata de mancare mancata adauga puncte la scorul tau.\n"
+		"   - Scopul secundar este sa obtii un scor cat mai mare. Fiecare bucata de mancare \n mancata  adauga puncte la scorul tau.\n"
 		"   - Scorul tau poate fi comparat cu cel al altor jucatori in mod competitiv.\n"
 		"6. Optiuni si variante:\n"
-		"   - In functie de versiunea jocului sau platforma pe care o folosesti, pot exista variante si optiuni suplimentare, cum ar fi bonusuri\n sau obstacole speciale."")");
+		"   - In functie de versiunea jocului sau platforma pe care o folosesti, pot exista \n variante si optiuni suplimentare, cum ar fi bonusuri\n sau obstacole speciale."")");
 	this->text.setFont(this->font);
 	this->text.setFillColor(Color::White);
 	text.setPosition(40, 100);
+	
 	this->text.setCharacterSize(22);
 
 	this->background.setSize(Vector2f(1280, 720));
