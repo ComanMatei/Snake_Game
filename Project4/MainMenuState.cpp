@@ -59,6 +59,7 @@ void MainMenuState::initButtons()
 MainMenuState::MainMenuState(RenderWindow* window, stack<State*>* states)
 	: State(window, states)
 {
+
 	this->initFonts();
 	this->initButtons();
 
@@ -72,7 +73,7 @@ MainMenuState::MainMenuState(RenderWindow* window, stack<State*>* states)
 	menuBackground.setFillColor(sf::Color::Blue);
 
 	snakeBackground.setSize(sf::Vector2f(670,670));
-	snakeBackground.setFillColor(sf::Color::Green);
+	snakeBackground.setFillColor(snakeColor.getColor());
 	snakeBackground.setPosition(Vector2f(550,20));
 
 	headerText.setCharacterSize(50);
@@ -124,7 +125,7 @@ void MainMenuState::updateButtons()
 	// Load Game
 	if (this->buttons["LOAD_STATE"]->isPressed())
 	{
-		this->states->push(new LoadState(this->window, this->states));
+		this->states->push(new LoadState(this->window, this->states));	
 	}
 
 

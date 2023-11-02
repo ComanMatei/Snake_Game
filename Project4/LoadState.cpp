@@ -18,7 +18,7 @@ LoadState::LoadState(RenderWindow* window, stack<State*>* states)
 	menuBackground.setFillColor(sf::Color::Magenta);
 
 	snakeBackground.setSize(sf::Vector2f(670, 670));
-	snakeBackground.setFillColor(sf::Color::Magenta);
+	snakeBackground.setFillColor(sf::Color::Red);
 	snakeBackground.setPosition(Vector2f(550, 20));
 
 	headerText.setCharacterSize(50);

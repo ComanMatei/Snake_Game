@@ -3,6 +3,7 @@
 
 #include "GameState.h"
 #include "Button.h"
+#include "SnakeColor.cpp"
 
 class MainMenuState :
     public State
@@ -12,6 +13,7 @@ private:
     RectangleShape background;
     RectangleShape menuBackground;
     RectangleShape snakeBackground;
+    SnakeColor snakeColor;
     Texture snakeImage;
     Sprite snakeImageSprite;
     Text headerText;
