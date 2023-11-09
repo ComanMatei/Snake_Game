@@ -97,7 +97,7 @@ void HelpState::updateButtons()
 
 	if (this->buttons["BACK_MENU"]->isPressed())
 	{
-		this->quit = true;
+		this->states->pop();
 	}
 }
 
