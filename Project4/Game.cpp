@@ -63,7 +63,13 @@ void Game::updateSFMLEvents()
 	while (this->window->pollEvent(this->sfEvent))
 	{
 		if (this->sfEvent.type == Event::Closed)
+		{
 			this->window->close();
+		}
+		if (this->sfEvent.type == Event::TextEntered)
+		{
+			gameName.typedOn(this->sfEvent);
+		}
 	}
 }
 

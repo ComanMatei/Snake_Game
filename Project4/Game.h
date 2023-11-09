@@ -2,6 +2,7 @@
 #define GAME_H
 
 #include "MainMenuState.h"
+#include "TextBox.cpp"
 
 class Game
 {
@@ -17,6 +18,8 @@ private:
 	//Initialization
 	void initWindow();
 	void initStates();
+
+	TextBox gameName;
 
 public:
 	//Contructor
@@ -37,8 +40,6 @@ public:
 	//Core
 	void run();
 };
-
-
 
 #endif // !GAME_h
 

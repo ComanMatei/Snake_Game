@@ -42,8 +42,17 @@
     <ClCompile Include="LoadState.cpp">
       <Filter>States</Filter>
     </ClCompile>
+    <ClCompile Include="NewGameState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="TextBox.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Snake.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
     <ClCompile Include="SnakeColor.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Resource Files</Filter>
     </ClCompile>
     <ClCompile Include="GameOverState.cpp">
       <Filter>Source Files</Filter>
@@ -71,8 +80,16 @@
     <ClInclude Include="LoadState.h">
       <Filter>States</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="GameOverState.h">
       <Filter>Header Files</Filter>
+=======
+    <ClInclude Include="NewGameState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="Snake.h">
+      <Filter>Resource Files</Filter>
+>>>>>>> 4f264f9e3fee57ca991264377070d5b3e8eb2dc2
     </ClInclude>
   </ItemGroup>
 </Project>

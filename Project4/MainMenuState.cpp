@@ -1,4 +1,5 @@
 ﻿#include "MainMenuState.h"
+#include "NewGameState.h"
 #include "HelpState.h"
 #include "LoadState.h"
 
@@ -113,7 +114,7 @@ void MainMenuState::updateButtons()
 	//New Game
 	if (this->buttons["GAME_STATE"]->isPressed())
 	{
-		this->states->push(new GameState(this->window, this->states));
+		this->states->push(new NewGameState(this->window, this->states));
 	}
 
 	// Help
