@@ -1,5 +1,6 @@
 #include "GameState.h"
 #include "MainMenuState.h"
+#include "GameOverState.h"
 
 void GameState::initFonts()
 {
@@ -19,6 +20,11 @@ void GameState::initButtons()
 {
 	this->buttons["BACK_MENU"] = new Button(0, 20, 150, 50,
 		&this->font, "Back",
+		Color(70, 70, 70, 200),
+		Color(150, 150, 150, 200),
+		Color(20, 20, 20, 200));
+	this->buttons["GAME_OVER"] = new Button(550, 400, 150, 50,
+		&this->font, "Game Over",
 		Color(70, 70, 70, 200),
 		Color(150, 150, 150, 200),
 		Color(20, 20, 20, 200));
@@ -66,6 +72,12 @@ void GameState::updateButtons()
 	{
 		this->quit = true;
 	}
+	if (this->buttons["GAME_OVER"]->isPressed())
+	{
+		this->states->push(new GameOverState(this->window, this->states));
+		
+	}
+	
 }
 
 void GameState::update(const float& dt)
