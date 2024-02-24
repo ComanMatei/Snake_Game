@@ -2,7 +2,7 @@
 
 ## Game Menu
 ### Here's the game menu, with complex implementations that add a distinctive and exciting touch to the gaming experience!!
-<img src="" width="500" height="300" />
+<img src="https://github.com/ComanMatei/Snake_Game/assets/125188207/8dad8d09-cfd0-42b5-bf42-fa2ab1ae74ec" width="500" height="300" />
 
 ## Choose Color
 ### We have introduced a colour palette for each player to choose their favourite colour.
@@ -26,7 +26,6 @@
 
 
 
-![Menu](https://github.com/ComanMatei/Snake_Game/assets/125188207/8dad8d09-cfd0-42b5-bf42-fa2ab1ae74ec)
 
 
 
