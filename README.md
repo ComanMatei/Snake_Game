@@ -14,7 +14,7 @@
 
 ## Game Play | Difficulty Hardcore
 ### To add even more entertainment, we have introduced a new game mode - hardcore mode.
-<img src="ttps://github.com/ComanMatei/Snake_Game/assets/125188207/5c59dddd-892c-4ee3-9642-19448ac338b4" width="500" height="300" />
+<img src="https://github.com/ComanMatei/Snake_Game/assets/125188207/3450d2f8-4fee-4592-9a26-a01de02d8a53" width="500" height="300" />
 
 ## Load Game Menu
 ### One of the fascinating aspects is the option to save progress, allowing us to return later to continue the adventure!!
